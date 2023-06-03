@@ -2,6 +2,14 @@ import styled from 'styled-components'
 
 export const SectionPadding = styled.div`
 padding: 4rem 6rem;
+
+@media screen and (max-width:850px){
+    padding: 4rem;
+}
+
+@media screen and (max-width:650px){
+    padding: 4rem 2rem;
+}
 `;
 
 export const FlexCenter = styled.div`
@@ -24,6 +32,10 @@ export const AppWrapper = styled.div`
     align-items: center;
 
     min-height: 100vh;
+
+    @media screen and (max-width: 1150px){
+        flex-direction: column;
+    }
 `;
 
 export const AppWrapperInfo = styled.div`
@@ -33,6 +45,8 @@ export const AppWrapperInfo = styled.div`
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+
+
 `;
 
 export const AppWrapperImg = styled.div`
@@ -47,11 +61,23 @@ export const AppWrapperImg = styled.div`
     img {
         width: 80%;
     }
+
+    @media screen and (max-width: 1150px){
+        margin: 5rem 0 0 0;
+
+        img {
+            width: 100%;
+        }
+    }
 `;
 
 export const AppWrapperImgReverse = styled.div`
     justify-content: flex-start;
     margin-right: 2rem;
+
+    @media screen and (max-width: 1150px){
+        margin: 0 0 5rem 0;
+    }
 `;
 
 export const CustomButton = styled.button`
@@ -67,6 +93,11 @@ export const CustomButton = styled.button`
     border: none;
     outline: none;
     cursor: pointer;
+
+    @media screen and (min-width:2000px){
+        font-size: 37px;
+        line-height: 67px;
+    }
 `;
 
 export const ParaCormorant = styled.p`
@@ -78,9 +109,22 @@ export const ParaCormorant = styled.p`
     font-feature-settings: 'tnum' on, 'lnum' on;
     line-height: 29.9px;
     font-size: 23px;
+
+    @media screen and (min-width:2000px){
+        font-size: 37px;
+        line-height: 67px;
+    }
+
+    @media screen and (max-width:650px){
+    font-size: 21px;
+    }
+
+    @media screen and (max-width:450px){
+    font-size: 19px;
+    }
 `;
 
-export const ParaOpenSans = styled.p`
+export const ParaOpenSans = styled.li`
     font-family: var(--font-alt);
     color: var(--color-white);
     font-weight: 400;
@@ -88,6 +132,19 @@ export const ParaOpenSans = styled.p`
     text-transform: capitalize;
     line-height: 28px;
     font-size: 16px;
+
+    @media screen and (min-width:2000px){
+        font-size: 30px;
+        line-height: 50px;
+    }
+
+    @media screen and (max-width:650px){
+    font-size: 14px;
+    }
+
+    @media screen and (max-width:450px){
+    font-size: 12px;
+    }
 `;
 
 export const HeadTextCormorant = styled.p`
@@ -97,8 +154,22 @@ export const HeadTextCormorant = styled.p`
     line-height: 83.2px;
     letter-spacing: 0.04em;
     text-transform: capitalize;
+
+    @media screen and (min-width:2000px){
+        font-size: 150px;
+        line-height: 210px;
+    }
+
+    @media screen and (max-width:450px){
+    font-size: 45px;
+    line-height: 70px;
+    }
 `;
 
 export const SpoonImg = styled.img`
 width: 45px;
+
+@media screen and (min-width:2000px){
+        width: 80px;
+    }
 `;
