@@ -2,7 +2,7 @@ import React from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdOutlineRestaurantMenu } from 'react-icons/md'
 import images from '../../constants/images'
-import { StyledSmallOverlay, NavbarContainer, NavbarLogo, NavLinks, StyledLi, NavbarActionContainer, NavbarSmallContainer, NavbarSmallLinks } from '../../styles/Navbar.styled';
+import { SmallStyledLi,StyledSmallOverlay, NavbarContainer, NavbarLogo, NavLinks, StyledLi, NavbarActionContainer, NavbarSmallContainer, NavbarSmallLinks } from '../../styles/Navbar.styled';
 import { useMediaQuery } from 'react-responsive'
 const navbarLinks = [
   {
@@ -31,6 +31,12 @@ const Navbar = () => {
   const showNavLinks = useMediaQuery({
     query: '(max-width:1150px)'
   })
+
+  const [toggleMenu, setToggleMenu] = React.useState<Boolean>(false);
+
+  const handleToggleMenu = React.useCallback(() => {
+    setToggleMenu(!toggleMenu)
+  }, [toggleMenu])
   return (
     <NavbarContainer>
       <NavbarLogo>
@@ -54,21 +60,23 @@ const Navbar = () => {
           <a href="/">Book Table</a>
         </StyledLi>
       </NavbarActionContainer>
-      {showNavLinks && (
-        <NavbarSmallContainer>
-          <GiHamburgerMenu color='#fff' fontSize={27} />
+      <NavbarSmallContainer>
+        {showNavLinks &&
+          <GiHamburgerMenu color='#fff' fontSize={27} onClick={handleToggleMenu} style={{ cursor: 'pointer' }} />
+        }
+        {toggleMenu && (
           <StyledSmallOverlay>
-            <MdOutlineRestaurantMenu color='#fff' fontSize={27} className='overlay__close' />
+            <MdOutlineRestaurantMenu fontSize={27} className='overlay__close' onClick={handleToggleMenu} />
             <NavbarSmallLinks>
               {navbarLinks.map(({ href, name }) => (
-                <StyledLi>
+                <SmallStyledLi>
                   <a href={href}>{name}</a>
-                </StyledLi>
+                </SmallStyledLi>
               ))}
             </NavbarSmallLinks>
           </StyledSmallOverlay>
-        </NavbarSmallContainer>
-      )}
+        )}
+      </NavbarSmallContainer>
     </NavbarContainer>
   );
 };
