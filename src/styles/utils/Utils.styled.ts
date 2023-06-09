@@ -132,6 +132,7 @@ export const ParaOpenSans = styled.li`
     text-transform: capitalize;
     line-height: 28px;
     font-size: 16px;
+    list-style: none;
 
     @media screen and (min-width:2000px){
         font-size: 30px;
