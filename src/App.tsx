@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   AboutUs,
@@ -10,17 +10,17 @@ import {
   Intro,
   Laurels,
   SpecialMenu,
-} from "./container";
-import { Navbar } from "./components";
+} from './container';
+import { Navbar } from './components';
 
 const App = () => (
   <div>
     <Navbar />
     <Header />
     <AboutUs />
-    {/* <SpecialMenu />
+    <SpecialMenu />
     <Chef />
-    <Intro />
+    {/*<Intro />
     <Laurels />
     <Gallery />
     <FindUs />
