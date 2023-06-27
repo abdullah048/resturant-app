@@ -88,7 +88,7 @@ export const SpecialMenuImage = styled.div`
   }
 
 
-  @media screen and (max-width:2000px){
+  @media screen and (min-width:2000px){
     width:650px;
 
     img {

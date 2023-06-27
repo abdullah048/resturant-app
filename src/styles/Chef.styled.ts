@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { AppBg, AppWrapperInfo } from './utils/Utils.styled';
+import { AppBg, AppWrapperInfo, ParaOpenSans } from './utils/Utils.styled';
 
 export const ChefContainer = styled(AppBg)`
   /* App Wrapper */
@@ -57,3 +57,56 @@ export const ChefInnerWrapper = styled.div`
 `;
 
 export const ChefBioContainer = styled(AppWrapperInfo)``;
+
+export const ChefContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5rem;
+`;
+
+export const ChefContentQuote = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  img {
+    width: 47px;
+    height: 40px;
+    margin: 0 1rem 1rem 0;
+  }
+`;
+
+export const ChefContentQuoteText = styled(ParaOpenSans)``;
+
+export const ChefContentQuoteTextSecondQuote = styled(ParaOpenSans)``;
+
+export const ChefSign = styled.div`
+  width: 100%;
+  margin-top: 3rem;
+`;
+
+export const ChefName = styled.p`
+  font-family: var(--font-base);
+  font-weight: 400;
+  font-size: 32;
+  line-height: 41px;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  color: var(--color-golden);
+`;
+
+export const ChefDesignation = styled(ParaOpenSans)``;
+
+export const ChefSignImg = styled.img`
+  width: 250px;
+  margin-top: 3rem;
+
+  @media screen and (min-width: 2000px) {
+    width: 370px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 80%;
+  }
+`;
